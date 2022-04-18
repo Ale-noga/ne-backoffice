@@ -1,1 +1,171 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: misoBold ;
+    src: url(assets/fonts/miso-bold.ttf) format("opentype");
+  }
+  
+  @font-face {
+    font-family: misoLight ;
+    src: url(assets/fonts/miso-light.ttf) format("opentype");
+  }
+  
+  @font-face {
+    font-family: misoRegular ;
+    src: url(assets/fonts/miso-regular.ttf) format("opentype");
+  }
+  
+  .mouseover{
+    cursor: pointer;
+  }
+  
+  .fs-18{
+    font-size: 18px;
+  }
+  
+  .fs-22{
+    font-size: 22px;
+  }
+  
+  .fs-24{
+    font-size: 24px;
+  }
+  
+  .misobold{
+    font-family: misoBold;
+  }
+  
+  .misolight{
+    font-family: misoLight;
+  }
+  
+  .misoregular{
+    font-family: misoRegular;
+  }
+  
+  .texto-primary{
+    color: #f7a336 !important;
+  }
+  
+  .background{
+    background-color: #f8dab215;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .border-budget{
+    border-radius: 15px;
+    border: 1px solid #f7a3366c;
+    padding: 20px;
+    background-color: transparent;
+  }
+  
+  .btn-primary{
+    border-color: #fbaf4ccb !important;
+    font-family: misoLight;
+    background-color: #f7a336 !important;
+    font-size: 16px !important;
+    width: 180px !important;
+    height: 48px !important;
+  }
+  
+  .btn-primary:disabled{
+    background-color: #36322bcb !important;
+    border-color: #36322bcb !important;
+  }
+  
+  .btn-google{
+    border-color: #db4a39 !important;
+    background-color: #db4a39 !important;
+    color: white !important;
+    width: 50px !important;
+    height: 48px !important;
+  }
+  
+  .btn-outline-primary{
+    border-color: #f7a336  !important;
+    color: #f7a336 !important;
+    font-family: misoLight;
+    font-size: 16px !important;
+    height: 48px !important;
+    background-color: transparent !important;
+  }
+  
+  .btn-outline-secondary{
+    border-color: #f7a336  !important;
+    background-color: transparent !important;
+  }
+  
+  .btn-outline-secondary:hover{
+    border-color: #f7a336  !important;
+    background-color: #f7a336  !important;
+    color: white;
+  }
+  
+  .form-floating{
+    .form-control{
+      color: #f7a336 !important;
+      font-family: misoBold;
+      font-size: 18px;
+      background-color: transparent;
+      border: none;
+      border-radius: 0%;
+      border-bottom: 1px solid #f7a336 !important;
+    }
+    .form-control:focus {
+      color: #f7a336 !important;
+      font-family: misoBold;
+      font-size: 18px;
+      background-color: transparent;
+      border: none;
+      border-radius: 0%;
+      border-bottom: 1px solid #f7a336 !important;
+    }
+    .form-label{
+      color: #f7a336 !important;
+      font-family: misoLight !important;
+    }
+    .form-control:read-only{
+      background-color: transparent !important;
+    }
+  }
+  
+  input:focus {
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  select:focus {
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+  
+  input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+      }
+  
+      input[type=number] {
+          -moz-appearance:textfield;
+      }
+  
+  .modal{
+    .modal-content{
+      background-color: #fdf8f3 !important;
+      border: none !important;
+    }
+    .modal-header, .modal-footer{
+      border: none !important;
+    }
+  }
+  
+  @media (min-width: 576px) and (max-width: 767px) {
+    .remove-576-767 {
+        display: none !important;
+    }
+  }
