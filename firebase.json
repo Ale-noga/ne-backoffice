@@ -15,7 +15,7 @@
   },
   "hosting": {
     "site": "ne-backoffice",
-    "public": "public",
+    "public": "dist/ne-backoffice",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -24,7 +24,7 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "dist/ne-backoffice"
+        "destination": "/index.html"
       }
     ]
   },
