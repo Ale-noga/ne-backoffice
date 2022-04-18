@@ -17,9 +17,7 @@
     "site": "ne-backoffice",
     "public": "dist/ne-backoffice",
     "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+      "**/.*"
     ],
     "rewrites": [
       {
