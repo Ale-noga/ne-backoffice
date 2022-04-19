@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Firestore, setDoc } from '@angular/fire/firestore';
-import { collection, deleteDoc, doc, getDoc, getDocs} from 'firebase/firestore';
+import { collection, deleteDoc, doc, getDoc, getDocs, query, where} from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,16 @@ export class BudgetService {
           data.push(doc.data()) 
         });
         return data;
+    }
+
+    async getAllBudgetsByName(name: any){
+      const q = query(collection(this.fb, "budgets"), where("name", "==", name));
+      let data: any = []
+      const budgets = await getDocs(q); 
+      budgets.forEach((doc) => {
+          data.push(doc.data()) 
+      });
+      return data; 
     }
 
     async getBudget(email: string){

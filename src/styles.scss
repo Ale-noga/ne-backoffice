@@ -54,7 +54,7 @@
   
   .border-budget{
     border-radius: 15px;
-    border: 1px solid #f7a3366c;
+    border: 1px solid black;
     padding: 20px;
     background-color: transparent;
   }
@@ -91,7 +91,7 @@
   }
   
   .btn-outline-secondary{
-    border-color: #f7a336  !important;
+    border-color: black  !important;
     background-color: transparent !important;
   }
   
@@ -103,25 +103,25 @@
   
   .form-floating{
     .form-control{
-      color: #f7a336 !important;
+      color: black !important;
       font-family: misoBold;
       font-size: 18px;
       background-color: transparent;
       border: none;
       border-radius: 0%;
-      border-bottom: 1px solid #f7a336 !important;
+      border-bottom: 1px solid black !important;
     }
     .form-control:focus {
-      color: #f7a336 !important;
+      color: black !important;
       font-family: misoBold;
       font-size: 18px;
       background-color: transparent;
       border: none;
       border-radius: 0%;
-      border-bottom: 1px solid #f7a336 !important;
+      border-bottom: 1px solid black !important;
     }
     .form-label{
-      color: #f7a336 !important;
+      color: black !important;
       font-family: misoLight !important;
     }
     .form-control:read-only{

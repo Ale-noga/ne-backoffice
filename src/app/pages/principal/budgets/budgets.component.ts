@@ -199,4 +199,9 @@ export class BudgetsComponent implements OnInit {
     this.optionsDestiny = this.statesService.getAllStates();
   }
 
+  async listen(event$: any) {
+    console.log(event$.target?.value)
+    this.budgets = await this.budgetService.getAllBudgetsByName(event$.target?.value)
+  }
+
 }
