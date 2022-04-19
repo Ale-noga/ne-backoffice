@@ -5,6 +5,7 @@ import jsPDF from 'jspdf';
 import { SelectItem } from 'src/shared/selectItem.model';
 import { BudgetService } from './budget.service';
 import { StatesService } from '../../../../shared/states';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-budgets',
@@ -200,8 +201,24 @@ export class BudgetsComponent implements OnInit {
   }
 
   async listen(event$: any) {
-    console.log(event$.target?.value)
-    this.budgets = await this.budgetService.getAllBudgetsByName(event$.target?.value)
+    if(event$.target?.value == ""){
+      this.refresh(); 
+    }
+    else{
+      this.budgets = await this.budgetService.getAllBudgetsByName(event$.target?.value)
+      if(this.budget == undefined){
+        await Swal.fire({
+          text: "Nada encontrado",
+          icon: 'error',
+          toast: true,
+          position: 'top-end',
+          timer: 3500,
+          timerProgressBar: true,
+          showConfirmButton: true,
+        })
+        this.refresh(); 
+      }
+    }
   }
 
 }
