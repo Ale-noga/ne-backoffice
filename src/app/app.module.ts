@@ -19,12 +19,13 @@ import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment.prod';
 import { PrincipalRoutingModule } from './pages/principal/principal-routing.module';
+import { DetailComponent } from './pages/principal/budgets/detail/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrincipalComponent,
-    AuthComponent
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

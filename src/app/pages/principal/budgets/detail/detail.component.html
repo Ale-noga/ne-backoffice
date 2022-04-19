@@ -1,0 +1,123 @@
+<div class="container">
+    <div class="row">
+        <p class="h1 misobold mt-2">
+            DETALHES DA COTAÇÃO
+        </p>
+    </div>
+    <div class="border-budget">
+      <form [formGroup]="form">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-4">
+            <div class="form-floating">
+            <input type="text" class="form-control" id="name"
+            placeholder="Nome Completo" formControlName="name" required>
+            <label for="name" class="form-label">Nome Completo*</label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-floating">
+            <input type="number" class="form-control" id="phoneNumber"
+            placeholder="11988888888" formControlName="phoneNumber" pattern="^[0-9]+$" required>
+            <label for="phoneNumber" class="form-label">Telefone de contato*</label>
+          </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-floating">
+            <input type="email" class="form-control" id="email"
+            placeholder="exemplo@exemplo.com" formControlName="email" required readonly>
+            <label for="email" class="form-label">E-mail*</label>
+            </div>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-4">
+            <div class="form-floating">
+              <select class="form-select form-control" formControlName="origin" required>
+                <option *ngFor='let origin of optionsOrigin' value="{{origin.value}}">{{origin.label}}</option>
+              </select>
+              <label for="origin" class="form-label">Origem*</label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-floating">
+              <select class="form-select form-control" formControlName="destiny" required>
+                <option *ngFor='let destiny of optionsDestiny' value="{{destiny.value}}">{{destiny.label}}</option>
+              </select>
+              <label for="destiny" class="form-label">Destino*</label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-floating">
+              <select class="form-select form-control" formControlName="deadline" required>
+                <option *ngFor='let deadline of optionsDeadline' value="{{deadline.value}}">{{deadline.label}}</option>
+              </select>
+              <label for="deadline" class="form-label">Prazo*</label>
+            </div>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-2">
+            <div class="form-floating">
+            <input type="number" step=".01" class="form-control" id="height" 
+            placeholder="1" formControlName="height" min=0   aria-describedby="height" required>
+            <label for="height" class="form-label">Altura*</label>
+            <div id="height" class="form-text texto-primary misolight">
+              Em metros</div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-floating">
+              <input type="number" step=".01" class="form-control" id="width" 
+              placeholder="1" formControlName="width" min=0  required>
+            <label for="width" class="form-label">Largura*</label>
+            </div>
+            <div id="width" class="form-text texto-primary misolight">
+              Em metros</div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-floating">
+            <input type="number" step=".01" class="form-control" id="depth" 
+            placeholder="1" formControlName="depth" min=0 required>
+            <label for="depth" class="form-label">Profundidade*</label>
+            </div>
+            <div id="depth" class="form-text texto-primary misolight">
+              Em metros</div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-group form-floating">
+              <input type="number" step=".01" min=0  class="form-control" 
+              id="cubage" formControlName="cubage" readonly>
+              <label for="depth" class="form-label">Peso Cubado*</label>
+              <button type="submit" class="btn btn-outline-secondary" (click)="getCubage()">Calcular</button>
+            </div>
+            <div id="cubage" class="form-text texto-primary misolight">
+              KG (A x L x P x 300 = Peso Cubado)</div>
+          </div>
+        </div>
+        <div class="row justify-content-end mt-5">
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary btn-lg me-3" (click)="sendBudget()" 
+          [disabled]="!form?.valid" data-bs-toggle="modal" data-bs-target="#dialogmodal">Enviar Cotação</button>
+          <button type="button" class="btn btn-outline-primary" (click)="backToBudgets()">Voltar</button>
+        </div>
+        </div>
+      </form>
+  </div>
+</div>
+
+<div class="modal fade" id="dialogmodal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="dialogmodal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="dialogmodal">{{dialogTitle}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          {{dialogMessage}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-bs-dismiss="modal" class="btn btn-outline-primary">Voltar</button>
+        </div>
+      </div>
+    </div>
+  </div>
