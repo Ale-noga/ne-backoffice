@@ -206,18 +206,6 @@ export class BudgetsComponent implements OnInit {
     }
     else{
       this.budgets = await this.budgetService.getAllBudgetsByName(event$.target?.value)
-      if(this.budget == undefined){
-        await Swal.fire({
-          text: "Nada encontrado",
-          icon: 'error',
-          toast: true,
-          position: 'top-end',
-          timer: 3500,
-          timerProgressBar: true,
-          showConfirmButton: true,
-        })
-        this.refresh(); 
-      }
     }
   }
 
